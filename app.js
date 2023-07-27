@@ -8,8 +8,8 @@ dotenv.config({path:'./config.env'})
 const port = process.env.PORT
 
 app.use(cors({
-  origin:"*",
-  credentials:true
+  origin:"https://tarunkataria.vercel.app/",
+
 }))
 
 
@@ -47,7 +47,7 @@ app.post('/api/v1/user/contact',async (req, res) => {
  
   if(!useremail|| !username || !phonenumber || !usermessage){
   return  res.status(406).json({
-        message:"Invalid"
+        message:"Please Fill All The Details."
     })
   }
 
@@ -84,8 +84,8 @@ try{
   await sendMail(email,mail,"Thank You for Your Portfolio Query")
   await sendMail(adminEmail,usermessage,"Contact From Portfolio")
     }catch(err){
-         res.status(406).json({
-            message:"Error in Message Send"
+       return  res.status(406).json({
+            message:"Error in mail Send."
         })
     }
    res.status(200).json({
