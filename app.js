@@ -41,7 +41,7 @@ const Contact = mongoose.model('Contact', contachSchema);
 app.get('/',(req,res)=>{
   res.send("I am a Working server")
 })
-app.get('/api/v1/user/contact',async (req, res) => {
+app.post('/api/v1/user/contact',async (req, res) => {
 //   res.send('Hello World!')
   const {useremail,usermessage,phonenumber,username} = req.body;
  
