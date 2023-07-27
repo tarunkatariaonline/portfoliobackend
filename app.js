@@ -3,8 +3,14 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 const dotenv = require('dotenv')
+const cors = require('cors')
 dotenv.config({path:'./config.env'})
 const port = process.env.PORT
+
+app.use(cors({
+  origin:"*",
+  credentials:true
+}))
 
 
 
