@@ -8,7 +8,8 @@ dotenv.config({path:'./config.env'})
 const port = process.env.PORT
 
 app.use(cors({
-  origin:"https://tarunkataria.vercel.app/",
+  origin:"https://tarunkataria.vercel.app",
+  credentials:true
 
 }))
 
